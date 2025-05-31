@@ -81,7 +81,7 @@ const addUsers = async (req, res) => {
         'INSERT INTO users (name, phone) VALUES ($1, $2) RETURNING *',
         [name, phone]
       );
-      res.status(201).json(result.rows[0]);
+      res.status(200).json(result.rows[0]);
     } catch (err) {
       res.status(500).json({ error: 'Failed to create user' });
     }
